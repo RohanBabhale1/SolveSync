@@ -1,0 +1,26 @@
+:root{--bg:#f3f5f7;--panel:#fff;--fg:#17212b;--mut:#66727f;--line:#dde2e8;--acc:#0f766e;--accfg:#fff;--ok:#177a5b;--err:#b3392c}
+@media (prefers-color-scheme:dark){:root{--bg:#12171c;--panel:#1a2128;--fg:#e6eaee;--mut:#93a0ad;--line:#2b343d;--acc:#2dd4bf;--accfg:#06231f;--ok:#4ade9b;--err:#ff8a7a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+h1{font-size:20px;margin:0 0 4px}h2{font-size:15px;margin:0 0 12px}
+.mut{color:var(--mut)}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+.wrap{max-width:640px;margin:32px auto;padding:0 20px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;margin-top:16px}
+label{display:block;font-weight:600;margin:14px 0 4px}label:first-of-type{margin-top:0}
+.hint{color:var(--mut);font-size:12.5px;margin-top:4px}
+input[type=text],input[type=password]{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);font:inherit}
+input:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.row{display:flex;gap:10px}.row>*{flex:1}
+.check{display:flex;align-items:center;gap:8px;font-weight:400;margin:8px 0}
+button{font:inherit;padding:8px 14px;border-radius:6px;border:1px solid var(--line);background:var(--panel);color:var(--fg);cursor:pointer}
+button.primary{background:var(--acc);color:var(--accfg);border-color:var(--acc);font-weight:600}
+.actions{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
+#status{margin-top:12px;min-height:20px}.ok{color:var(--ok)}.err{color:var(--err)}
+a{color:var(--acc)}
+.pop{width:340px;padding:14px}
+.pop .stats{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.pop .stat{flex:1 1 28%;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.pop .stat b{display:block;font-size:20px;line-height:1.1}
+.list{list-style:none;margin:8px 0 0;padding:0}
+.list li{padding:7px 0;border-top:1px solid var(--line)}
+.list li:first-child{border-top:0}

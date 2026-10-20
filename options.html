@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>SolveSync options</title><link rel="stylesheet" href="ui.css"></head>
+<body><div class="wrap">
+  <h1>SolveSync</h1>
+  <div class="mut">Push accepted solutions to GitHub, one folder and README per problem.</div>
+
+  <div class="card">
+    <h2>GitHub</h2>
+    <div id="who" class="mut">Not signed in.</div>
+    <div class="actions" style="margin-top:10px">
+      <button id="login" class="primary">Sign in with GitHub</button>
+      <button id="install" hidden>Choose repository access</button>
+      <button id="logout" hidden>Sign out</button>
+    </div>
+    <div id="device" hidden>
+      <div class="hint">Enter this code on the GitHub page that just opened (it is copied to your clipboard):</div>
+      <div id="code" class="mono" style="font-size:22px;letter-spacing:3px;margin:6px 0"></div>
+      <a id="verify" href="https://github.com/login/device" target="_blank" rel="noreferrer">Open github.com/login/device</a>
+      <button id="cancel" style="margin-left:10px">Cancel</button>
+    </div>
+    <div class="row">
+      <div><label for="repo">Repository</label><input id="repo" type="text" list="repos" placeholder="owner/my-solutions"><datalist id="repos"></datalist></div>
+      <div><label for="branch">Branch</label><input id="branch" type="text" placeholder="main"></div>
+    </div>
+    <div class="actions">
+      <button id="test">Test connection</button>
+      <button id="refresh">Refresh repo list</button>
+      <button id="forget">Forget problems deleted from repo</button>
+    </div>
+    <div class="hint">SolveSync can only touch the repositories you pick on GitHub’s install page (click <b>Choose repository access</b>, then select only your solutions repo). Create the repo on GitHub first if it doesn’t exist. If you delete a solution’s folder on GitHub, click <b>Forget problems deleted from repo</b> so SolveSync will push it again.</div>
+  </div>
+
+  <div class="card">
+    <h2>Repository layout</h2>
+    <label for="tpl">Folder per problem</label>
+    <input id="tpl" type="text" class="mono">
+    <div class="hint">Tokens: <span class="mono">{platform} {group} {difficulty} {id} {slug}</span>. <span class="mono">{group}</span> is the primary topic on LeetCode, the rating on Codeforces, the section on CSES and the contest type on AtCoder. Default gives <span class="mono">LeetCode/array/0001-two-sum/solution.py</span> with a <span class="mono">README.md</span> beside it.</div>
+    <label class="check"><input id="hold" type="checkbox"> Hold contest solutions until the contest ends, then push them automatically</label>
+    <label class="check"><input id="root" type="checkbox"> Keep a solved-problems index in the root README.md (only the block between SolveSync markers is edited)</label>
+  </div>
+
+  <div class="card">
+    <h2>Platforms &amp; usernames</h2>
+    <div class="hint" style="margin:0 0 8px">A solution is only pushed when it was submitted from the username saved here. Submissions from any other account are ignored. Leave a platform unchecked to skip it entirely.</div>
+    <div id="plats"></div>
+  </div>
+
+  <div class="actions"><button id="save" class="primary">Save settings</button></div>
+  <div id="status" role="status"></div>
+</div>
+<script src="lib/shared.js"></script><script src="options.js"></script>
+</body></html>

@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="ui.css"></head>
+<body class="pop">
+  <h2 style="margin-bottom:2px">SolveSync</h2>
+  <div id="conn" class="mut"></div>
+  <div class="stats" id="stats"></div>
+  <div id="heldBox" hidden><div class="mut">Held until contest ends</div><ul class="list" id="held"></ul></div>
+  <div class="mut">Recent syncs</div>
+  <ul class="list" id="recent"></ul>
+  <div class="actions"><button id="backfill">Backfill this site</button><button id="opts">Options</button><button id="repo">Open repo</button></div>
+  <div id="bfmsg" class="mut" style="margin-top:6px"></div>
+  <details style="margin-top:10px"><summary class="mut">Activity log</summary><ul class="list" id="log"></ul></details>
+  <script src="lib/shared.js"></script><script src="popup.js"></script>
+</body></html>
